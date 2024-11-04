@@ -3,7 +3,7 @@ import { KafkaService } from './kafka.service';
 import { KafkaConsumerService } from './kafka.consumer';
 
 @Module({
-  providers: [KafkaService,KafkaConsumerService],
+  providers: [KafkaService],
   exports: [KafkaService],
 })
 export class KafkaModule implements OnModuleInit, OnModuleDestroy {

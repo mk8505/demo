@@ -28,7 +28,7 @@ DELETE /users/:id
 ## PostgreSQL for storing data and database design (like migration scripts, tables)
 
 ## Generate Migration
-$ npx ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:generate ./src/migrations/CreateUsersTable.ts -d ./config/typeorm.config.ts
+$ npx ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:generate ./src/migrations/CreateUsersTable -d ./config/typeorm.config.ts
 
 ## Run migration
 $ npx ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:run -d ./config/typeorm.config.ts

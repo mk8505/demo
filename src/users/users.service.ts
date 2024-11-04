@@ -15,9 +15,8 @@ export class UsersService {
 
   async create(user: Partial<User>): Promise<User> {
     try {
-      const newUser = await this.usersRepository.save(user);
-      await this.kafkaService.sendMessage('user-created', newUser);
-      return newUser;
+      await this.kafkaService.sendMessage('user-created', user);
+      return user as User;
     } catch (error) {
       this.logger.error(`Failed to create user: ${error.message}`);
       throw new Error('Error creating user');

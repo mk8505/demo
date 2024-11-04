@@ -20,6 +20,7 @@ export class KafkaService {
         topic,
         messages: [{ value: JSON.stringify(message) }],
       });
+      return { message: 'User creation request sent.' };
     } catch (error) {
       this.logger.error(`Failed to send message: ${error.message}`);
       throw new Error('Error send message');

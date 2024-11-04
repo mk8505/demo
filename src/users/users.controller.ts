@@ -83,6 +83,7 @@ export class UsersController {
       throw new BadRequestException(errors);
     }
     try {
+      userInstance.updatedAt = new Date();
       const updatedUser = await this.usersService.update(+id, userInstance);
       if(updatedUser){
         return {
